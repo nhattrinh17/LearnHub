@@ -1,3 +1,21 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"],
+      // "@modules/*": ["./src/modules/*"],
+      // "@assets/*": ["./src/assets/*"],
+      // "@uiCore/*": ["./src/uiCore/*"],
+      // "@constants/*": ["./src/constants/*"],
+      // "@utils/*": ["./src/utils/*"],
+      // "@redux/*": ["./src/redux/*"],
+      // "@models/*": ["./src/models/*"],
+      // "@env": ["@env.d.ts"]
+    }
+  }
 }
