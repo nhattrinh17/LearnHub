@@ -5,114 +5,58 @@
  * @format
  */
 
+import { Provider } from 'react-redux';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { store } from '@redux/store';
+import { navigationRef } from '@utils/index';
+import Splash from '~/modules/auth/screens/splash';
+import Login from '~/modules/auth/screens/login';
+import Register from '~/modules/auth/screens/register';
+import FlashMessage from 'react-native-flash-message';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const Stack = createNativeStackNavigator();
+
+
+function App(): JSX.Element {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={{ flex: 1 }}>
+      <Provider store={store}>
+        <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator
+              initialRouteName="Splash"
+              screenOptions={{
+                headerShown: false,
+                animation: 'fade',
+              }}>
+              <Stack.Screen name="Splash" component={Splash} options={{ animation: 'none' }} />
+              <Stack.Screen name="Login" component={Login} options={{ animation: 'fade' }} />
+              <Stack.Screen name="Register" component={Register} options={{ animation: 'fade' }} />
+              {/* <Stack.Screen name="Home" component={HomeWrapper} options={{ animation: 'fade' }} />
+              <Stack.Screen name="Search" component={SearchWrapper} options={{ animation: 'fade_from_bottom', animationDuration: 300 }} />
+              <Stack.Screen name="DetailHistorySearch" component={DetailHistorySearchWrapper} options={{ animation: 'fade' }} />
+              <Stack.Screen name="DetailChat" component={DetailChatWrapper} options={{ animation: 'fade' }} />
+              <Stack.Screen name="ListImageChat" component={ListImageChat} options={{ animation: 'fade' }} />
+              <Stack.Screen name="SettingGroupChat" component={SettingGroupChat} options={{ animation: 'slide_from_right' }} /> */}
+            </Stack.Navigator>
+          {/* <RealmProvider schema={[HistorySearchUsers, GroupChatHistory, UserRead, User, Members, Group, Messages]}>
+         
+          </RealmProvider> */}
+        </NavigationContainer>
+      </Provider>
+      <FlashMessage position="top" />
     </View>
   );
 }
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

@@ -8,12 +8,12 @@
     "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*"],
-      // "@modules/*": ["./src/modules/*"],
+      "@modules/*": ["./src/modules/*"],
       // "@assets/*": ["./src/assets/*"],
-      // "@uiCore/*": ["./src/uiCore/*"],
-      // "@constants/*": ["./src/constants/*"],
-      // "@utils/*": ["./src/utils/*"],
-      // "@redux/*": ["./src/redux/*"],
+      "@uiCore/*": ["./src/uiCore/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@redux/*": ["./src/redux/*"],
       // "@models/*": ["./src/models/*"],
       // "@env": ["@env.d.ts"]
     }
