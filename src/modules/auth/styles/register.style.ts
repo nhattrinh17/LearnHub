@@ -10,7 +10,6 @@ export const stylesRegister = StyleSheet.create({
   },
   boxLogin: {
     width: '100%',
-    flexDirection: 'row',
     justifyContent: 'center',
     flex: 1,
     alignItems: 'center',

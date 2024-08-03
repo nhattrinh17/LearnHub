@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorOptions } from '~/constants';
+import { colorOptions, colorText, fontSizesCustoms } from '~/constants';
 
 export const stylesLogin = StyleSheet.create({
   container: {
@@ -15,8 +15,15 @@ export const stylesLogin = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  textForgetPassword: {
+  textNavigate: {
     color: colorOptions.primaryColor,
+    textAlign: 'center',
+    fontSize: fontSizesCustoms.h4,
+    fontWeight: '500',
+  },
+  textForgetPassword: {
+    color: colorText.disabledText,
+    fontSize: fontSizesCustoms.h6,
     fontWeight: '500',
     textAlign: 'center',
   },

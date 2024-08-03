@@ -33,14 +33,17 @@ export default function Login({ navigation }: any): JSX.Element {
   return (
     <View style={stylesLogin.container}>
       <View style={stylesLogin.boxLogin}>
-        <LogoAppComponent width="160" height="160" />
+        <LogoAppComponent />
       </View>
       <View>
         <BlockInputStyleTwo placeholder={'Số điện thoại hoặc email'} fontSize={fontSizesCustoms.h4} line color={'#000'} backgroundColor={'#ccc'} value={account} onChange={onChangeAccount} />
         <BlockInputStyleTwo placeholder={'Mật khẩu'} fontSize={fontSizesCustoms.h4} color={'#000'} value={password} onChange={onChangePassword} type={'password'} />
         <UiButton content={'ĐĂNG NHẬP'} backgroundColor={colorOptions.primaryColor} textColor="#fff" paddingVertical={14} borderRadius={12} disableButton={disableButton} handlePerss={() => handleSubmit()} />
       </View>
-      <Text style={stylesLogin.textForgetPassword}>QUÊN MẬT KHẨU</Text>
+      <Text onPress={() => navigation.navigate('Register')} style={stylesLogin.textNavigate}>
+        Tạo tài khoản
+      </Text>
+      <Text style={stylesLogin.textForgetPassword}>QUÊN MẬT KHẨU ?</Text>
     </View>
   );
 }

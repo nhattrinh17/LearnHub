@@ -1,12 +1,9 @@
 export const colorOptions: any = {
-  primaryColor: '#2374E1',
-  
-  dark: {
-   
-  },
-  light: {
-    
-  },
+  primaryColor: '#f8922d',
+  whiteSmoke: 'whitesmoke',
+
+  dark: {},
+  light: {},
 };
 
 export const colorText = {
