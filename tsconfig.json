@@ -9,11 +9,11 @@
     "paths": {
       "~/*": ["./src/*"],
       "@modules/*": ["./src/modules/*"],
-      // "@assets/*": ["./src/assets/*"],
+      "@assets/*": ["./src/assets/*"],
       "@uiCore/*": ["./src/uiCore/*"],
       "@constants/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"],
-      "@redux/*": ["./src/redux/*"],
+      "@redux/*": ["./src/redux/*"]
       // "@models/*": ["./src/models/*"],
       // "@env": ["@env.d.ts"]
     }

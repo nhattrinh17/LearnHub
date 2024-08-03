@@ -4,3 +4,4 @@ export * from './Button';
 export * from './InputSearchOne';
 export * from './BoxConfirm';
 export * from './CategorySettingGroup';
+export * from './Animation/index';
