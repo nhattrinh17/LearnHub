@@ -17,6 +17,7 @@ import Splash from '@modules/auth/screens/splash';
 import Login from '@modules/auth/screens/login';
 import Register from '@modules/auth/screens/register';
 import FlashMessage from 'react-native-flash-message';
+import { HomeScreen } from '~/modules/app/screens/home';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -38,12 +39,7 @@ function App(): JSX.Element {
             <Stack.Screen name="Splash" component={Splash} options={{ animation: 'none' }} />
             <Stack.Screen name="Login" component={Login} options={{ animation: 'fade' }} />
             <Stack.Screen name="Register" component={Register} options={{ animation: 'fade' }} />
-            {/* <Stack.Screen name="Home" component={HomeWrapper} options={{ animation: 'fade' }} />
-              <Stack.Screen name="Search" component={SearchWrapper} options={{ animation: 'fade_from_bottom', animationDuration: 300 }} />
-              <Stack.Screen name="DetailHistorySearch" component={DetailHistorySearchWrapper} options={{ animation: 'fade' }} />
-              <Stack.Screen name="DetailChat" component={DetailChatWrapper} options={{ animation: 'fade' }} />
-              <Stack.Screen name="ListImageChat" component={ListImageChat} options={{ animation: 'fade' }} />
-              <Stack.Screen name="SettingGroupChat" component={SettingGroupChat} options={{ animation: 'slide_from_right' }} /> */}
+            <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade' }} />
           </Stack.Navigator>
           {/* <RealmProvider schema={[HistorySearchUsers, GroupChatHistory, UserRead, User, Members, Group, Messages]}>
          

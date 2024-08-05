@@ -37,3 +37,13 @@ export const apiRegisterUserAndDevice = async (user: string, deviceId: string, o
   }
   return false;
 };
+
+export const createUser = async (data: any) => {
+  const baseAxios = new BaseAxios();
+  const request = await baseAxios.post('/user', data);
+  console.log('🚀 ~ createUser ~ request:', request);
+  if (request?.statusCode == 201) {
+    return request.data;
+  }
+  return false;
+};
