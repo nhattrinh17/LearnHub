@@ -2,7 +2,7 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from '~/constants';
 import { apiGetUserInfo, apiLoginAccount } from './api';
 import { setStorageByName } from '@utils/index';
 import { dispatchRedux } from '~/redux/utilRedux';
-import { setCurrentUser } from '~/redux/app/userSlice';
+import { setCurrentUser } from '~/redux/app/user.slice';
 
 export const handleLogin = async (account: string, password: string): Promise<boolean> => {
   const dataToken = await apiLoginAccount(account, password);

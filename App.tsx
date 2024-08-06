@@ -18,6 +18,7 @@ import Login from '@modules/auth/screens/login';
 import Register from '@modules/auth/screens/register';
 import FlashMessage from 'react-native-flash-message';
 import { HomeScreen } from '~/modules/app/screens/home';
+import { DetailDocument } from '~/modules/app/screens/detailDocument';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -40,6 +41,7 @@ function App(): JSX.Element {
             <Stack.Screen name="Login" component={Login} options={{ animation: 'fade' }} />
             <Stack.Screen name="Register" component={Register} options={{ animation: 'fade' }} />
             <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade' }} />
+            <Stack.Screen name="DetailDocument" component={DetailDocument} options={{ animation: 'slide_from_right' }} />
           </Stack.Navigator>
           {/* <RealmProvider schema={[HistorySearchUsers, GroupChatHistory, UserRead, User, Members, Group, Messages]}>
          

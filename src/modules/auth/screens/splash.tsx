@@ -5,7 +5,7 @@ import { getStorageByName } from '~/utils';
 import { ACCESS_TOKEN } from '~/constants';
 import { apiGetUserInfo } from '../utils/api';
 import { dispatchRedux } from '~/redux/utilRedux';
-import { setCurrentUser } from '~/redux/app/userSlice';
+import { setCurrentUser } from '~/redux/app/user.slice';
 // import { handleRegisterOneSignal } from '../utils/handleSplash';
 
 export default function Splash(props: any): JSX.Element {

@@ -4,7 +4,22 @@ import { Text, TouchableOpacity } from 'react-native';
 import styles from './style';
 
 export function UiButton(props: any): JSX.Element {
-  const { content, width, height, borderColor, borderRadius, backgroundColor, handlePerss, textColor, disableButton, paddingHorizontal, paddingVertical } = props;
+  const {
+    //
+    content,
+    width,
+    marginVertical,
+    marginHorizontal,
+    height,
+    borderColor,
+    borderRadius,
+    backgroundColor,
+    handlePerss,
+    textColor,
+    disableButton,
+    paddingHorizontal,
+    paddingVertical,
+  } = props;
 
   return (
     <TouchableOpacity
@@ -18,6 +33,8 @@ export function UiButton(props: any): JSX.Element {
           backgroundColor: disableButton ? '#f5f5f5' : backgroundColor || styles.button.backgroundColor,
           borderColor: borderColor || styles.button.borderColor,
           borderRadius: borderRadius || styles.button.borderRadius,
+          marginHorizontal: marginHorizontal >= 0 ? marginHorizontal : 2,
+          marginVertical: marginVertical >= 0 ? marginVertical : 16,
         },
       ]}
       onPress={handlePerss}>
@@ -39,4 +56,6 @@ UiButton.propTypes = {
   disableButton: PropTypes.bool,
   paddingVertical: PropTypes.number,
   paddingHorizontal: PropTypes.number,
+  marginHorizontal: PropTypes.number,
+  marginVertical: PropTypes.number,
 };

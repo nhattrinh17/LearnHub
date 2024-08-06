@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
@@ -7,12 +7,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: 'white',
-    marginHorizontal: 2,
-    marginVertical: 12,
     flexDirection: 'row',
     alignContent: 'center',
-    marginTop: 20,
-    marginBottom: 12,
   },
   textButton: {
     fontSize: 14,
