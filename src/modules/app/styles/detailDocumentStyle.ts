@@ -3,9 +3,7 @@ import { fontSizesCustoms } from '~/constants';
 
 export const detailDocStyle = StyleSheet.create({
   wrapper: {
-    flex: 1,
     backgroundColor: 'white',
-    overflow: 'scroll',
   },
   header: {
     flexDirection: 'row',
@@ -16,6 +14,7 @@ export const detailDocStyle = StyleSheet.create({
   boxContent: {
     alignItems: 'center',
     paddingVertical: 12,
+    paddingHorizontal: 8,
   },
   imageLayer: {
     width: '35%',
@@ -67,13 +66,20 @@ export const detailDocStyle = StyleSheet.create({
     color: '#ccc',
   },
   pdfWrapper: {
-    flex: 1,
-    paddingHorizontal: 16,
-    height: 10000,
+    // paddingHorizontal: 8,
+    width: Dimensions.get('window').width * 0.8,
+    height: Dimensions.get('window').height * 0.8,
   },
   pdf: {
     width: '100%',
-    height: Dimensions.get('screen').height,
-    // height: Dimensions.get('screen').height,
+    height: '100%',
+  },
+  description: {
+    color: 'black',
+  },
+  googlepaybutton: {
+    width: 180,
+    height: 40,
+    fontSize: fontSizesCustoms.h6,
   },
 });
